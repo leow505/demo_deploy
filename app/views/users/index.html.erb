@@ -1,0 +1,29 @@
+<h1>Hi <%= @current_user.name %>!</h1>
+<a href="/users">All User</a> <a href="/logout" data-method='delete'>Logout</a>
+<h3>Here is your profile description:</h3>
+<p id='box'><%= @current_user.description %></p>
+<h3>Your Professional Network:</h3>
+<div id="list-box">
+	<center>
+	<% @friends.each do|user| %>
+		<p><a href='/users/<%= user.id %>'><%= user.name %></a> <a href="/friendships/<%= user.id %>" data-method='delete'>Delete</a></p>
+	<% end -%>
+	</center>
+</div>
+<h3>Invitations:</h3>
+<span>The following people asked you to be their network:</span>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Action</th>
+	</tr>
+	<% @invitation.each do |names| %>
+	<tr>
+		<td><a href='/users/<%= names.user_id %>'><%= names.name %></a></td>
+		<td>
+			<a href="/friendships/<%= names.id %>" data-method='patch'>Accept Invite</a>
+			<a href="/friendships/<%= names.id %>" data-method='post'>Ignore</a>
+		</td>
+	</tr>
+	<% end -%>
+</table>

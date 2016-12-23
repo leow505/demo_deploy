@@ -1,0 +1,18 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#box{
+	border: 1px solid black;
+	padding: 5px;
+	width: 250px;
+}
+table, tr, th, td{
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 5px;
+}
+#list-box{
+	overflow-y: scroll;
+	height: 150px;
+	width: 250px;
+}

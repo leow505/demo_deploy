@@ -1,0 +1,16 @@
+
+<a href="/profile">My Profile</a>
+<a href="/logout" data-method="delete">Logout</a>
+<h3>Users you may want to connect with:</h3>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Action</th>
+	</tr>
+	<% @users.each do |user| %>
+	<tr>
+		<td><a href='/users/<%= user.id %>'><%= user.name %></a></td>
+		<td><a href="/friendships/<%= user.id %>">Connect</a></td>
+	</tr>
+	<% end -%>
+</table>
